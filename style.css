@@ -1,0 +1,101 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: blueviolet;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;  
+    gap: 50px;
+}
+
+.container-task {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    height: 100px;
+    background-color: antiquewhite;
+    border: 1px solid antiquewhite;
+    border-radius: 5px;
+    gap: 20px;
+    padding: 15px ;
+}
+
+.input-task {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 50px;
+    border: 1px solid blueviolet;
+    border-radius: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.btn_add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 50px;
+    background-color: blueviolet;
+    border: 1px solid blueviolet;
+    border-radius: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: antiquewhite;
+    cursor: pointer;
+}
+
+.container-result {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    height: 100px;
+    background-color: antiquewhite;
+    border: 1px solid antiquewhite;
+    border-radius: 5px;
+    gap: 20px;
+    padding: 15px ;
+}
+
+.result__list-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 15px ;
+}
+
+.title {
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 50px;
+}
+
+.btn_delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: blueviolet;
+    border: 1px solid blueviolet;
+    border-radius: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: antiquewhite;
+    cursor: pointer;
+}
+
