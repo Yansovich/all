@@ -1,26 +1,60 @@
 const input = document.querySelector('.input-task')
-const btnAdd = document.querySelector('.btn_add')
+const inputSearch = document.querySelector('.input-search')
+const btnAdd = document.querySelector('.btn-add')
+const btnSearch = document.querySelector('.btn-search')
 const listTasks = document.querySelector('.container-result')
-const btnDelete = document.querySelector('.btn__delete')
 
 btnAdd.addEventListener('click', addTasks)
-btnDelete.addEventListener('click', function() {
- console.log(100000000000)
-})
- 
-function addTasks () {
+btnSearch.addEventListener('click', searchTask)
+
+function addTasks() {
     let title = input.value
 
-    const listItems = `<li class="result__list-item">
-                <h2 class="title">${title}</h2>
-                <button class="btn btn_delete">Delete</button>               
-            </li>`
+    if (title !== '') {
+        const listItems = `<li class="result__list-item" data-id="${new Date().getTime()}>
+        <h2 class="title">${title}</h2>
+        <button class="btn btn-delete">Delete</button>
+        <div class="line"></div>                     
+    </li>`
 
         listTasks.insertAdjacentHTML('afterbegin', listItems)
+        clearInput()
+    } else {
+        return
+    }
+
+    const btnDelete = document.querySelector('.btn-delete')
+
+    btnDelete.addEventListener('click', function () {
+
+        console.log(this.parentNode.dataset.id);
+        const id = this.parentNode.dataset.id
+        deleteTask(id)
+
+    })
 }
 
-// function deleteTask (e) {
-//     if (e.target.classList.contains('.btn_delete')) {
-//         listItems.remove()
-//     }
-// }
+function clearInput() {
+    input.value = '' 
+    inputSearch.value = '' 
+}
+
+function deleteTask(id) {
+    const li = document.querySelectorAll('li')
+    li.forEach(el => el.dataset.id === id && el.remove())
+}
+
+function searchTask() {
+
+    let title = input.value
+    let title2 = inputSearch.value
+    
+    const li = document.querySelectorAll('li')
+
+    // li.forEach(el => el.title === title2 && el.classList.add('show'));
+    li.forEach(el => el.title !== title2 && el.classList.add('hide'))
+
+    console.log(li.forEach(el => el.title !== title2 && el.classList.add('hide')));
+
+    clearInput()
+}
